@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <style>
+            #input{
+                width: 100%;
+                height: 40px;
+            }
+            table{
+                border: 1px solid black;
+                border-collapse: collapse;
+                width: 100%;
+                font-size: 18px;
+            }
+            tr{
+                border: 1px solid black;
+            }
+            th,td{
+                text-align: left;
+                padding: 12px;
+            }
+            td{
+                background-color: cornflowerblue;
+            }
+            th{
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <input type="text" onkeyup="myFunction()" placeholder="Serach.." id="input"/>
+            <tr>
+                <th width="60%">名称</th>
+                <th width="40%">城市</th>
+            </tr>
+            <tr class="tr1">
+                <td>AjjkjL</td>
+                <td>Germany</td>
+            </tr>
+            <tr class="tr1">
+                <td>BdskansdkLdaisj</td>
+                <td>Sweden</td>
+            </tr>
+            <tr class="tr1">
+                <td>IksjdksTjskd</td>
+                <td>UK</td>
+            </tr>
+            <tr class="tr1">
+                <td>KsjdiajsidEsds</td>
+                <td>Germany</td>
+            </tr>
+        </table>
+        <script>
+            var tr = document.getElementsByClassName('tr1');
+            function myFunction(){
+                var value = document.getElementById('input').value;
+                var partten  = new RegExp(value,'i');
+                for(var i = 0; i < tr.length; i++){
+                    td = tr[i].getElementsByTagName('td')[0];
+                    if(partten.test(td.innerHTML)){
+                        tr[i].style.display = "";
+                    }
+                    else{
+                        tr[i].style.display = "none";
+                    }
+                }   
+            }
+        </script>
+    </body>
+</html>

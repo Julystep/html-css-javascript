@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <ul id="id01">
+            <li>jeva</li>
+            <li>javal</li>
+            <li>orad</li>
+            <li>Tome</li>
+            <li>Annay</li>
+            <li>Grefone</li>
+        </ul>
+    </body>
+    <script>
+        function sortList() {
+            var list = document.getElementById('id01');
+            var li = list.getElementsByTagName('li');
+            for(var i = 1; i < li.length; i++){
+                var key = li[i].innerHTML;
+                for(var j = i-1; j >= 0; j--){
+                    if(li[j].innerHTML.toLowerCase() > key.toLowerCase()){
+                        li[j+1].innerHTML = li[j].innerHTML;
+                    }
+                    else{
+                        break;
+                    }
+                }
+                li[j+1].innerHTML = key;
+            } 
+        }
+        sortList();
+    </script>
+</html>

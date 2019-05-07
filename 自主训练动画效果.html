@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            div{
+                position: relative;
+                width: 100px;
+                height: 100px;
+                background-color: rebeccapurple;
+                animation: div 3s ease-in-out 1s infinite alternate ;
+                -webkit-animation: div 3s ease-in-out 1s infinite alternate ;
+                -moz-animation: div 3s ease-in-out 1s infinite alternate ;
+                -o-animation: div 3s ease-in-out 1s infinite alternate ;
+            }
+            @keyframes div{
+                0%{
+                    opacity: 0;
+                    background-color: red;
+                    top: 0px;
+                    left: 0px;
+                }
+                25%{
+                    opacity: 0.25;
+                    background-color: rgba(255, 0, 0, 0.767);
+                    top: 500px;
+                    left: 0px;
+                }
+                50%{
+                    opacity: 0.5;
+                    background-color: rgba(112, 54, 54, 0.63);
+                    top: 500px;
+                    left: 1000px;
+                }
+                75%{
+                    opacity: 0.75;
+                    background-color: rgba(149, 168, 42, 0.63);
+                    top: 0px;
+                    left: 1000px;
+                }
+                100%{
+                    opacity: 1;
+                    background-color: rgba(42, 168, 105, 0.63);
+                    top: 0px;
+                    left: 0px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div></div>
+    </body>
+    <script>
+        var div = document.getElementsByTagName('div')[0];
+        div.animate([
+            {opacity:0,width:'100px', offset:1/3},
+            {opacity:1,width:'1000px', offset:1}
+        ],{
+            duration: 3000,
+            direction:'alternate'
+        })
+    </script>
+</html>

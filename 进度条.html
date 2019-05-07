@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            .progress{
+                border: 1px solid black;
+                width: 100%;
+                height: 30px;
+            }
+            .container{
+                text-align: center;
+                background-color:blue;
+                width: 0%;
+                height: 30px;
+                font-size: 20px;
+                color: crimson;
+           }
+        </style>
+    </head>
+    <body>
+        <button type="button" onclick="myFunction()">点击开始</button>
+        <div class="progress">
+            <div class="container">0%</div>
+        </div>
+    </body>
+    <script>
+        var width = 0;
+        var div = document.getElementsByClassName('container')[0];
+        function myFunction(){
+            var id = setInterval(play,10);
+        
+        function play(){
+            if(width == 100){
+                clearInterval(id);
+            }else{
+                width++;
+                div.innerHTML = width+'%';
+                div.style.width = width+'%';
+            }
+        }
+        }
+    </script>
+</html>

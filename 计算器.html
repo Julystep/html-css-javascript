@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <style>
+            *{
+                border: none;
+                font-family: 'Open Sans',sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .center{
+                text-align: center;
+                border-radius: 50%;
+                background-color: #fff;
+                height: 600px;
+                width: 600px;
+                margin: auto;
+
+            }
+            form{
+                background-color: #495678;
+                box-shadow: 4px 4px #3d4a65;
+                margin: 40px auto;
+                padding: 40px 0 30px 40px;
+                width: 280px;
+            }
+            [name='btn1']{
+                outline: none;
+	            cursor: pointer;
+	            font-size: 20px;
+	            height: 45px;
+	            margin: 5px 0 5px 10px;
+	            width: 45px;
+            }
+            [name='btn1'].first-child{
+                margin:5px 0 5px 10px;
+            }
+            [name='btn1'],#screen,form{
+                border-radius: 25px;
+            }
+            #screen{
+                outline: none;
+                background-color: #98d1dc;
+                box-shadow: inset 6px 6px 0px #3facc0;
+                color: #dededc;
+                font-size: 20px;
+                height: 47px;
+                text-align: right;
+                width: 165px;
+                padding-right: 10px;
+	            margin-left: 10px;
+            }
+            .btn{
+                background-color: #72778b;
+	            box-shadow: 0 5px #5f6680;
+	            color: #dededc;
+            }
+            .btn:active{
+                box-shadow: 0 2px #5f6680;
+  	            -webkit-transform: translateY(2px);
+  	            -ms-transform: translateY(2px);
+  	            -moz-tranform: translateY(2px);
+  	            transform: translateY(2px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="center">
+            <form class="calculatar">
+                <input type="button" name="btn1" id="reset" value="C" readonly />
+                <input type="text"  id="screen" value="" readonly />
+                <br/>
+                <input type="button" class="btn" name="btn1" value="7" readonly />
+                <input type="button" class="btn" name="btn1" value="8" readonly />
+                <input type="button" class="btn" name="btn1" value="9" readonly />
+                <input type="button" class="btn" name="btn1" value="+" readonly />
+                <br/>
+                <input type="button" class="btn" name="btn1" value="4" readonly />
+                <input type="button" class="btn" name="btn1" value="5" readonly />
+                <input type="button" class="btn" name="btn1" value="6" readonly />
+                <input type="button" class="btn" name="btn1" value="*" readonly />
+                <br/>
+                <input type="button" class="btn" name="btn1" value="1" readonly />
+                <input type="button" class="btn" name="btn1" value="2" readonly />
+                <input type="button" class="btn" name="btn1" value="3" readonly />
+                <input type="button" class="btn" name="btn1" value="-" readonly />
+                <br>
+                <input type="button" class="btn" name="btn1" value="0" readonly />
+                <input type="button" class="btn" name="btn1" value="." readonly />
+                <input type="button" class="btn" name="btn1"  value="/" readonly />
+                <input type="button" id="cal" name="btn1" value="=" readonly />
+            </form>
+        </div>
+        <script>
+            var clear = document.getElementById('reset');
+            clear.addEventListener('click',function(){
+                document.getElementById('screen').value = "";
+            });
+            var btn = document.getElementsByClassName('btn');
+            for(var i = 0; i < btn.length; i++){
+                btn[i].onclick = function(){
+                    document.getElementById('screen').value +=this.value;
+                }
+            }
+            var cal = document.getElementById('cal');
+            cal.onclick =function(){
+                var result = 0;
+	            result = document.getElementById("screen").value;
+	            document.getElementById("screen").value = "";
+	            document.getElementById("screen").value = eval(result);
+            }
+        </script>
+    </body>
+</html>

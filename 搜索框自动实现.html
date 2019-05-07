@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+    <style>
+        #myInput{
+            width: 100%;
+            height: 40px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        ul li a{
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+        }
+        .word{
+            background-color: rgb(28, 126, 28);
+            cursor: pointer;
+        }
+        .words{
+            background-color: chartreuse;
+        }
+    </style>
+    </head>
+    <body>
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+
+        <ul>
+        <li class="word"><a href="#">A</a></li>
+        <li class="words"><a href="#" >Adele</a></li>
+        <li class="words"><a href="#" >Agnes</a></li>
+
+        <li class="word"><a href="#" >B</a></li>
+        <li class="words"><a href="#" >Billy</a></li>
+        <li class="words"><a href="#" >Bob</a></li>
+
+        <li class="word"><a href="#" >C</a></li>
+        <li class="words"><a href="#" >Calvin</a></li>
+        <li class="words"><a href="#" >Christina</a></li>
+        <li class="words"><a href="#" >Cindy</a></li>
+        </ul>
+    </body>
+    <script>
+        /* 正则表达式RegExp */
+        var li = document.getElementsByTagName('li');
+        function myFunction(){
+            var value = document.getElementById('myInput').value;
+            for(var i = 0; i < li.length; i++){
+                li[i].style.display = "none";
+            }
+            var partten = new RegExp(value,'i');
+            for(var i = 0; i < li.length; i++){
+                x = li[i].childNodes[0].innerHTML;
+                if(partten.test(li[i].childNodes[0].innerHTML)){
+                    li[i].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</html>

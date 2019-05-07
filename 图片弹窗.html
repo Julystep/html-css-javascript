@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content" charset="utf-8" />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+ 
+            .row > .column {
+                padding: 0 8px;
+            }
+ 
+            .row:after {
+              
+                display: table;
+                clear: both;
+            }
+ 
+            .column {
+                float: left;
+                width: 25%;
+            }
+            #close{
+                position: relative;
+                top: 20px;
+                right: 20px;
+                color: aliceblue;
+                font-size: 50px;
+                float: right;
+                cursor: pointer;
+            }
+            .container{
+                display: none;
+                position: fixed;
+                background-color:black;
+                opacity: 0.8;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: atuo;
+            }
+            .imge{
+                display: inline-block;
+                cursor: pointer;
+                border-radius: 5px;
+                transition: 0.3s;
+                margin-right: 10px;
+            }
+            .imge:hover{
+                opacity: 0.7;
+            }
+            #imge1{
+                position: relative;
+                top: 200px;
+                left: 350px;
+                margin: atuo;
+                display: inline-block;
+            }
+            #prev, #next{
+                position: absolute;
+                top: 450px;
+            }
+            #prev{
+                left: 350px;
+                padding: 2px 2px;
+                color: white;
+                font-size: 50px;
+            }
+            #next{
+                right: 370px;
+                padding: 2px 2px;
+                color: white;
+                font-size: 50px;
+            }
+            #prev:hover, #next:hover{
+                cursor: pointer;
+                background-color: black;
+            }
+            #imge1{
+                -webkit-animation-name: imge;
+                -webkit-animation-duration: 1s;
+                animation-name: imge;
+                animation-duration: 1s;
+            }
+            @-webkit-keyframes imge{
+                from{-webkit-transform: scale(0);}
+                to{-webkit-transform: scale(1);}
+            }
+            @keyframes imge{
+                from{-webkit-transform: scale(0);}
+                to{-webkit-transform: scale(1);}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="column">
+                <img src="4.jpg" class="imge" alt="图片" width="300" height="200" onclick="openDIV();current(1)"/>
+            </div>
+            <div class="column">
+                <img src="2.jpg" class="imge" alt="图片" width="300" height="200" onclick="openDIV();current(2)"/>
+            </div>
+            <div class="column">
+                <img src="1.jpg" class="imge" alt="图片" width="300" height="200" onclick="openDIV();current(3)"/>
+            </div>
+        </div>
+        <div class="container">
+            <span id="close">&times;</span>
+            <img id="imge1" width="1200" height="600" class="imge1"/>
+            <img id="imge1" width="1200" height="600" class="imge1"/>
+            <img id="imge1" width="1200" height="600" class="imge1"/>
+            <div id="prev" onclick="prev()"><</div>
+            <div id="next" onclick="next()">></div>
+        </div>
+    </body>
+    <script>
+        var slideIndex = 0;
+        var img1 = document.getElementsByClassName('imge');
+        var img2 = document.getElementsByClassName('imge1');
+        var div  = document.getElementsByClassName('container')[0];
+        var span = document.getElementById('close');
+        function openDIV(){
+            div.style.display = "block";
+            for(var i = 0; i< img1.length; i++){
+                img1[i].style.display = "none";
+            }
+        }
+        function prev(){
+            slideIndex--;
+            if(slideIndex < 1){
+                slideIndex = img1.length;
+            }
+            showImge();
+        }
+        function next(){
+            slideIndex++;
+            if(slideIndex > img1.length){
+                slideIndex = 1;
+            }
+            showImge();
+        }
+        function current(n){
+            showImge(slideIndex = n);
+        }
+        function showImge(){
+            img2[slideIndex-1].src = img1[slideIndex-1].src;
+            for(var i =0; i < img2.length; i++){
+                img2[i].style.display = "none";
+            }
+            img2[slideIndex-1].style.display = "block";
+        }
+        span.onclick = function(){
+            div.style.display = "none";
+            for(var i = 0; i< img1.length; i++){
+                img1[i].style.display = "block";
+            }
+        }
+    </script>
+</html>
