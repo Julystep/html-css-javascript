@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                text-align: center;
+            }
+            #img-container1{
+                width: 600px;
+                height: 700px;
+                background-image: url(1.jpg);   /* 利用url设置背景图片 */
+                background-size:100%;
+                background-clip: border-box;
+                border: 10px black dotted;
+                margin: 0;
+                margin-top: 100px;
+                margin-left: 500px;
+                float: left;
+                padding: 20px;
+                background-repeat: no-repeat;
+                background-position: 0px;
+                background-origin: border-box /* 判断background-position通过什么来定位 */
+          
+            }
+            #img-container2{
+                width: 600px;
+                height: 700px;
+                background-image: url(1.jpg);   /* 利用url设置背景图片 */
+                background-size:100%;
+                background-clip: padding-box;
+                border: 10px black dotted;
+                margin: 0;
+                margin-top: 100px;
+                margin-left: 500px;
+                float: left;
+                padding: 20px;
+                background-repeat: no-repeat;
+                background-position: 0px;
+                background-origin: padding-box /* 判断background-position通过什么来定位 */
+                
+            }
+            #img-container3{
+                width: 600px;
+                height: 700px;
+                background-image: url(1.jpg);   /* 利用url设置背景图片 */
+                background-size:100%;
+                background-clip: content-box;
+                border: 10px black dotted;
+                margin: 0;
+                margin-top: 100px;
+                margin-left: 500px;
+                float: left;
+                padding: 20px;
+                background-repeat: no-repeat;
+                background-position: 0px;
+                background-origin: content-box /* 判断background-position通过什么来定位 */
+              
+            }
+            .select{
+                width: 500px;
+                position: absolute;
+
+            }
+            .select p{
+                padding: 0px;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="img-container" id="img-container1"></div>
+        <div class="select">
+                <p>
+                    <input type="radio" value="img-container1" id="border-box" name="backgroundClip" checked onchange="setChecked('border-box');">
+                    <label for="border-box">border-box</label>
+                    <input type="radio" value="img-container2" id="padding-box" name="backgroundClip" onchange="setChecked('padding-box');">
+                    <label for="padding-box">padding-box</label>
+                    <input type="radio" value="img-container3" id="content-box" name="backgroundClip" onchange="setChecked('content-box');">
+                    <label for="content-box">content-box</label>
+                </p>
+        </div>
+        <script>
+            img = document.getElementsByClassName('img-container')[0];
+            function setChecked(id){
+                elem = document.getElementById(id);
+                img.id = elem.checked ? elem.value : '';
+            }
+            </script>
+    </body>
+</html>
