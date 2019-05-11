@@ -20,7 +20,7 @@ window.onload = function(){
 	setMenu("fontSize");
 	setMenu("fontFamily");
 	
-	function setChecked(id, styleName){
+	function setChecked(id){
 		var elm = document.getElementById(id);
 		function change(){
 			editor.style[elm.name] = elm.checked ? this.value : "";
@@ -33,6 +33,7 @@ window.onload = function(){
 	setChecked("left");
 	setChecked("center");
 	setChecked("right");
+	
 	var link = document.getElementById("link"),
 		img = document.getElementById("img");
 	
