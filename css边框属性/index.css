@@ -1,0 +1,39 @@
+/*
+box-shadow: offset-x offset-y blur spread color inset;
+box-shadow: X轴偏移量 Y轴偏移量 [阴影模糊半径] [阴影扩展] [阴影颜色] [投影方式];
+*/
+.container.imge{
+    margin: auto;
+    padding: 0px;
+    width: 600px;
+    height: 800px;
+    background-image: url(index.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-origin: border-box;
+    background-attachment:scroll;
+    border-style: solid;
+    border-width: 15px;
+    border-color: green;
+    -webkit-background-size: 100%;
+    -webkit-background-clip: padding-box;
+    outline-color: yellowgreen;
+    outline-width: 10px;
+    border-radius: 5px;
+}
+.container.border div button{
+    padding: 3px;
+    width: 95.406px;
+    height: 40px;
+}
+.container.border div ul li{
+    padding: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+.container.border{
+    margin-top: 30px;
+    margin-left: 340px;
+    padding: auto;
+}
