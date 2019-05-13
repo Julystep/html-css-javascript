@@ -4,22 +4,81 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet/css" href="./bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/index.css" />
     </head>
     <body class="body">
-        <div class="header">
-            <div class="container">
-                <div class="title">
-                    <p class="col-md-12">Bootstrap学习之路</p>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <p class="navbar-brand">练习网页</p>
                 </div>
-                <div class="header-body">
-                    <div class="row">
-                        <div class="col-md-4 col-xs-6">文档</div>
-                        <div class="col-md-4 col-xs-6">下载</div>
-                        <div class="col-md-4 col-xs-6">连接</div>
+                <div class="navbar-body">
+                    <p class="navbar-text">文档</p>
+                    <p class="navbar-text">版本</p>
+                    <p class="navbar-text">下载</p>
+                    <p class="navbar-text">关于</p>
+                </div>
+                <div class="navbar-footer">
+                    <button class="btn btn-success">conect us</button>
+                    <span class="glyphicon glyphicon-search"></span>
+                </div>
+            </div>
+        </nav>
+        <div class="container img">
+            <div class="container article">
+                <div class="container col-xs-12">
+                    <h1>前端学习网站</h1>
+                </div>
+                <div class="row">
+                    <div class="container col-xs-4">
+                        <h2>语言精修</h2>
+                        <a href="http://www.w3school.com.cn/tags/tag_html.asp" class="col-xs-12" id="HTML" role="button">HTML<sup>®</sup></a>
+                        <a href="http://www.w3school.com.cn/css/index.asp" class="col-xs-12" id="CSS">CSS<sup>®</sup></a>
+                        <a href="http://www.w3school.com.cn/js/index.asp" class="col-xs-12" id="JAVASCRIPT">JAVASCRIPT<sup>®</sup></a>
+                    </div>
+                    <div class="container col-xs-4">
+                        <h2>框架选取</h2>
+                        <a href="http://www.bootcss.com/" class="col-xs-12" id="HTML" role="button">BootStrap<sup>®</sup></a>
+                        <a href="http://jquery.com/" class="col-xs-12" id="CSS">Jquery<sup>®</sup></a>
+                        <a href="https://angularjs.org/" class="col-xs-12" id="JAVASCRIPT">Angular<sup>®</sup></a>
+                    </div>
+                    <div class="container col-xs-4">
+                        <h2>项目实战</h2>
+                        <a href="http://www.baidu.com/" class="col-xs-12" id="HTML" role="button">BAIDU<sup>®</sup></a>
+                        <a href="http://tengxun.com/" class="col-xs-12" id="CSS">TENGXUN<sup>®</sup></a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container foot">
+            <div class="container foot_inner">
+                <p>信息快讯<a href="www.baidu.com">百度</a><a href="www.runoob.com">菜鸟教程</a> <span class="li">技术支持:<em>li</em></span></p>
+            </div>  
+        </div>
+        <div class="container introduce">
+            <div class="row">
+                <div class="article col-xs-6">
+                    <h3>适配方法</h3>
+                    <p>&nbsp;&nbsp; 如今各大浏览器全部支持移动端适配，并拥有良好的效果，如果您是移动app开发者，请<a href="#">点击这里>></a></p>
+                    <p>&nbsp;&nbsp; 如果您希望基于webpack快速开发，请<a href="#">点击这里>></a></p>
+                </div>
+                <div class="picture col-xs-6">
+                    <img src="./img/1.png" alt="手机" title="phone" />
+                </div>
+            </div> 
+        </div>
+        <div class="container us">
+            <div class="container title">
+                <h2>为什么我们如此的受欢迎</h2>
+                <div class="row">
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4"></div>
+                    <div class="col-xs-4"></div>
+                </div>
+            </div>
+        </div>
+    <script src='./js/jquery-3.3.1.min.js'></script>
+    <script src="./bootstrap/js/bootstrap.min.js"></script>
     </body>
 </html>
