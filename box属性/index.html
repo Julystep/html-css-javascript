@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .outer{
+                margin: auto;
+                width: 300px;
+                height: 300px;
+                padding: 10px;
+                border-style: solid;
+                border-width: medium;
+                border-radius: 30px;
+            }
+            .inner{
+                margin-top: 30px;
+                margin-left: 30px;
+                width: 350px;
+                height: 350px;
+                background-color: yellowgreen;
+            }
+            .outer1{
+                margin: auto;
+                margin-top: 100px;
+                width: 300px;
+                padding: 10px;
+                border-style: solid;
+                border-width: medium;
+                border-radius: 30px;
+            }
+            .inner1{
+                width: 300px;
+                height: 300px;
+                background-color: yellowgreen;
+            }
+            .overFlow-selected{
+                position: absolute;
+                margin: 0px;
+                padding: 3px;
+                width: 20%;
+                overflow: visible;
+                background-color: chocolate;
+            }
+            .overFlow-selected ul{
+                list-style-type: none;
+                width: 100%;
+                text-align: left;
+                padding: 0px;
+            }
+            .overFlow-selected ul li{
+                padding: 3px 5px;
+            }
+            .overFlow-selected ul li.title{
+                padding-left: 35%;
+                font-weight: 700;
+                font-size: 18px;
+            }
+            .overFlow-selected ul li.body{
+                background-color: rgba(245, 245, 245, 0.700);
+                margin: 4px;
+                padding-left: 40%;
+                cursor: pointer;
+            }
+            .overFlow-selected ul li.body:hover{
+                background-color: whitesmoke;
+            }
+            .table{
+                position: absolute;
+                margin-top: 250px;
+                background-color: chocolate;
+                padding: 4px;
+            }
+            .table tr{
+                padding: 1px;
+            }
+            .table tr td{
+                background-color:rgba(245, 245, 245, 0.700); 
+                cursor: pointer;
+            }
+            .table tr td:hover{
+                background-color: whitesmoke;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="overFlow-selected" id="overFlow-selected">
+            <ul class="menu" id="menu">
+                <li class="title">overflow</li>
+                <!--visible元素在框外也是可见的-->
+                <li class="body">visible</li>
+                <!--hidden元素在框外是不可见的-->
+                <li class="body">hidden</li>
+                <!--scroll元素超过外边框的话，会以滚动条的形式查看其他内容-->
+                <li class="body">scroll</li>
+                <!--与scroll类似-->
+                <li class="body">auto</li>
+                <!--根据父元素-->
+                <li class="body">inherit</li>
+                <!--元素超过将不显示该元素
+                <li class="body">no-display</li>
+                内容溢出将不显示内容
+                <li class="body">no-content</li>
+                -->
+            </ul>
+        </div>
+        <table class="table">
+            <tr>
+                <th>父级的overflow</th>
+                <th>父级的position</th>
+                <th>子集的position</th>
+            </tr>
+            <tr>
+                <td class="fa-overflow">visible</td>
+                <td class="fa-position">relative</td>
+                <td class="ch-position">absolute</td>
+            </tr>
+            <tr>
+                <td class="fa-overflow">hidden</td>
+                <td class="fa-position">absolute</td>
+                <td class="ch-position">fixed</td>
+            </tr>
+            <tr>
+                <td class="fa-overflow">scroll</td>
+                <td class="fa-position">fixed</td>
+                <td class="ch-position">relative</td>
+            </tr>
+            <tr>
+                <td class="fa-overflow">auto</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <div class="outer" id="outer">
+            <div class="inner" id="inner"></div>
+        </div>
+        <div class="outer1" id="outer1">
+            <div class="inner1" id="inner1"></div>
+        </div>
+    </body>
+    
+    
+    <script>
+        var outer = document.getElementById('outer');
+        var inner = document.getElementById('inner');
+        var outer1 = document.getElementById('outer1');
+        var inner1 = document.getElementById('inner1');
+        function setStyle(){
+            var elem = document.getElementById('menu');
+            for(var i = 0; i < elem.children.length; i++) {
+                elem.children[i].onclick = function(){
+                    for(var i = 0; i < elem.children.length; i++){
+                        if(elem.children[i].className === 'title'){
+                            continue;
+                        }
+                        elem.children[i].style.backgroundColor = 'rgba(245, 245, 245, 0.700)'
+                    }
+                   this.style.backgroundColor = 'whitesmoke';
+                   outer.style.overflow = this.innerHTML;
+                }
+            }
+        }
+        setStyle();
+        function cal(elem, styleName, content){
+            for(var i = 0; i < elem.length; i++) {
+                elem[i].onclick = function(){
+                    for(var i = 0; i < elem.length; i++){
+                        elem[i].style.backgroundColor = 'rgba(245, 245, 245, 0.700)'
+                    }
+                    this.style.backgroundColor = 'whitesmoke';
+                    content.style[styleName] = this.innerHTML;
+                }
+            }
+        }
+        function setStyle1(){
+            var faOverflow = document.getElementsByClassName('fa-overflow');
+            var faPosition = document.getElementsByClassName('fa-position');
+            var chPosition = document.getElementsByClassName('ch-position');
+            cal(faOverflow, 'overflow', outer1);
+            cal(faPosition, 'position', outer1);
+            cal(chPosition, 'position', inner1);
+        }
+        setStyle1();
+    </script>
+</html>
