@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                background-color: #ccc;
+                float: left;
+            }
+            .flexContainer, .flexContainer2{
+                display: flex;
+                width: 600px;
+                height: 230px;
+                background-color: greenyellow;
+                flex-direction: row;
+            }
+            .flexContainer2{
+                height: 80px;
+            }
+            .flexContainer2, .tableContainer{
+                margin-top: 30px;
+            }
+            .flexItem{
+                background-color: blue;
+                width: 100px;
+                margin: 5px;
+            }
+            .flexDirection, .justifyContent, .alignItems, .flexWrap{
+                background-color: white;
+                padding: 1px;
+                margin: 3px;
+                cursor: pointer;
+            }
+            .flexDirection:hover, .justifyContent:hover, .alignItems:hover, .flexWrap:hover{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="flexContainer" id="flexContainer">
+            <div class="flexItem">A</div>
+            <div class="flexItem">B</div>
+            <div class="flexItem">C</div>
+            <div class="flexItem">D</div>
+        </div>
+        <div class="flexContainer2" id="flexContainer2">
+            <div class="flexItem">A</div>
+            <div class="flexItem">B</div>
+            <div class="flexItem">C</div>
+            <div class="flexItem">D</div>
+            <div class="flexItem">E</div>
+            <div class="flexItem">F</div>
+            <div class="flexItem">G</div>
+            <div class="flexItem">H</div>
+        </div>
+        <div class="tableContainer">
+            <table class="table">
+                <tr>
+                    <th>flexDirection</th>
+                    <th>justifyContent</th>
+                    <th>alignItems</th>
+                    <th>flexWrap</th>
+                </tr>
+                <tr>
+                    <td class="flexDirection">row</td>
+                    <td class="justifyContent">flex-end</td>
+                    <td class="alignItems">flex-end</td>
+                    <td class="flexWrap">nowrap</td>
+                </tr>
+                <tr>
+                    <td class="flexDirection">row-reverse</td>
+                    <td class="justifyContent">flex-start</td>
+                    <td class="alignItems">flex-start</td>
+                    <td class="flexWrap">wrap</td>
+                </tr>
+                <tr>
+                    <td class="flexDirection">column</td>
+                    <td class="justifyContent">center</td>
+                    <td class="alignItems">center</td>
+                    <td class="flexWrap">wrap-reverse</td>
+                </tr>
+                <tr>
+                    <td class="flexDirection">column-reverse</td>
+                    <td class="justifyContent">space-between</td>
+                    <td class="alignItems">baseline</td>
+                    <td class="flexWrap">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="flexDirection">&nbsp;</td>
+                    <td class="justifyContent">space-around</td>
+                    <td class="alignItems">stretch</td>
+                    <td class="flexWrap">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        var flexContainer = document.getElementById('flexContainer');
+        var flexContainer2 = document.getElementById('flexContainer2');
+        function setStyle(classname, styleName, main){
+            console.log(classname);
+            var elem = document.getElementsByClassName(classname);
+            for(var i = 0; i < elem.length; i++){
+                elem[i].onclick = function(){
+                    for(var j = 0; j < elem.length; j++){
+                        elem[j].style.backgroundColor = 'white';
+                    }
+                    this.style.backgroundColor = 'yellow';
+                   main.style[styleName] = this.innerHTML;
+                }
+            }
+        }
+        setStyle('flexDirection', 'flexDirection', flexContainer)
+        setStyle('justifyContent', 'justifyContent', flexContainer)
+        setStyle('alignItems', 'alignItems', flexContainer)
+        setStyle('flexWrap', 'flexWrap', flexContainer2)
+    </script>
+</html>
