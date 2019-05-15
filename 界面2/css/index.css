@@ -1,0 +1,100 @@
+.navbar.navbar-transparent{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+}
+.navbar-brand .navbar-text{
+    font-size: xx-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    font-weight: bolder;
+}
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+#detail1 ul li {
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 3px;
+}
+#detail1 ul li a{
+    color: white;
+    padding: 10px 50px;
+}
+#detail1 ul li a#login{
+    margin-right: 20px;
+    border: 1px solid gainsboro;
+    border-radius: 52px;
+}
+#detail1 ul li a#join:hover{
+    color: aliceblue;
+    background-color: #20B2AA;
+}
+.navbar.navbar-transparent button span{
+    color: white;
+    font-size: 25px;
+}
+.navbar.navbar-transparent .navbar-collapse.collapse.in{
+    background-color: aliceblue;
+    border-radius: 5px;
+    animation: showOut 1s ;
+    -webkit-animation: showOut 1s;
+}
+@keyframes showOut{
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.navbar.navbar-transparent .navbar-collapse.collapse.in ul li{
+    text-align: center;
+    color: gray;
+}
+.navbar.navbar-transparent .navbar-collapse.collapse.in ul li a#login{
+    background-color: rgb(4, 0, 255, 0.5);
+    width: 100%;
+}
+.navbar.navbar-transparent .navbar-collapse.collapse.in ul li a#login:hover{
+    background-color: rgb(4, 0, 255, 0.3);
+}
+.navbar.navbar-transparent .navbar-collapse.collapse.in ul li a#join{
+    color: grey;
+    width: 100%;
+}
+.navbar.navbar-transparent .navbar-collapse.collapse.in ul li a#join:hover{
+    color: blue;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.container_first{
+    background-color: #20B2AA ;
+    width: 100%;
+    height: 600px;
+}
+
+.container_first .container.title .lead{
+    margin-top: 150px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    font-size: x-large;
+}
+.container_first .container.detail p{
+    text-align: center;
+    color: white;
+    font-size: larger;
+}
+.container_first .container.footer{
+    color: white;
+    margin-top: 70px;
+}
+.container_first .container.footer h4{
+    text-align: center;
+}
+.container_first .container.footer .row .col-xs-4.col-lg-4.col-md-4{
+   text-align: center;
+   padding: 20px;
+   line-height: 20px;
+}
