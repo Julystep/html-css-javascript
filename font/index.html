@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                box-align: center;
+                -webkit-box-align: center;
+                box-pack: center;
+                -webkit-box-align: center;
+                background-color: gray;
+            }
+            .fontContain{
+                box-align: center;
+                box-pack: center;
+                -webkit-box-align: center;
+                -webkit-box-align: center;
+                width: 400px;
+                height: 400px;
+                margin: auto;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                font-family:Georgia, 'Times New Roman', Times, serif
+            }
+            table tr td {
+                background-color: white;
+                cursor: pointer;
+                font-kerning: normal;
+            }
+            table tr td:hover{
+                background-color: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="fontContain">
+            <p>这是中文</p>
+            <p>this is English</p>
+        </div>
+        <table>
+            <tr>
+                <th>fontFamily</th>
+                <th>fontSize</th>
+                <th>fontStyle</th>
+                <th>fontWeight</th>
+            </tr>
+            <tr>
+                <td class="fontFamily">'Courier New', Courier, monospace</td>
+                <td class="fontSize">small</td>
+                <td class="fontStyle">normal</td>
+                <td class="fontWeight">normal</td>
+            </tr>
+            <tr>
+                <td class="fontFamily">'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif</td>
+                <td class="fontSize">medium</td>
+                <td class="fontStyle">italic</td>
+                <td class="fontWeight">bold</td>
+            </tr>
+            <tr>
+                <td class="fontFamily">Georgia, 'Times New Roman', Times, serif</td>
+                <td class="fontSize">large</td>
+                <td class="fontStyle">oblique</td>
+                <td class="fontWeight">bolder</td>
+            </tr>
+        </table>
+    <script>
+        var font = document.getElementsByClassName('fontContain')[0];
+        function setStyle(classname, stylename){
+            var elem = document.getElementsByClassName(classname);
+            for(var i = 0; i < elem.length; i++){
+                elem[i].onclick = function(){
+                    for(var j = 0; j < elem.length; j++){
+                        elem[j].style.backgroundColor = 'white';
+                    }
+                    this.style.backgroundColor = 'yellow';
+                    font.style[stylename] = this.innerHTML;
+                }
+            }
+        }
+        setStyle('fontFamily', 'fontFamily');
+        setStyle('fontSize', 'fontSize');
+        setStyle('fontStyle', 'fontStyle');
+        setStyle('fontWeight', 'fontWeight');
+    </script>
+    </body>
+</html>
