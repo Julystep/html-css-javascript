@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                background-color: grey;
+            }
+            .container{
+                padding: 0px;
+                margin-top: 30px;
+                margin-left: 400px;
+                margin-right: auto;
+            }
+            table tr td{
+                background-color: white;
+                cursor: pointer;
+            }
+            table tr td:hover{
+                background-color: brown;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <ul>
+                <li>第一行</li>
+                <li>第二行</li>
+                <li>第三行</li>
+                <li>第四行</li>
+            </ul>
+            <table>
+                <tr>
+                    <th>listStyleType</th>
+                    <!--inside表示和文本在相同的位置，outside表示点实在列表的外面并不在列表的内部-->
+                    <th>listStylePosition</th>
+                    <th>listStyleImage</th>
+                </tr>
+                <tr>
+                    <td class="listStyleType">disc</td>
+                    <td class="listStylePosition">inside</td>
+                    <td class="listStyleImage">./2.png</td>
+                </tr>
+                <tr>
+                    <td class="listStyleType">circle</td>
+                    <td class="listStylePosition">outside</td>
+                    <td class="listStyleImage">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="listStyleType">square</td>
+                    <td class="listStylePosition">&nbsp;</td>
+                    <td class="listStyleImage">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="listStyleType">decimal</td>
+                    <td class="listStylePosition">&nbsp;</td>
+                    <td class="listStyleImage">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var ul = document.getElementsByTagName('ul')[0];
+            function setStyle(classname, stylename){
+                var elem = document.getElementsByClassName(classname);
+                for(var i = 0; i < elem.length; i++){
+                    elem[i].onclick = function(){
+                        for(var j = 0; j < elem.length; j++){
+                            elem[j].style.backgroundColor = 'white';
+                        }
+                        if(stylename === 'listStyleImage'){
+                            this.style.backgroundColor = 'brown';
+                            ul.style[stylename] = 'url("' + this.innerHTML + '")';
+                        }else{
+                            this.style.backgroundColor = 'brown';
+                            ul.style[stylename] = this.innerHTML;
+                        }
+                    }
+                }
+            }
+            setStyle('listStyleType', 'listStyleType');
+            setStyle('listStylePosition', 'listStylePosition');
+            setStyle('listStyleImage', 'listStyleImage');
+        </script>
+    </body>
+</html>
