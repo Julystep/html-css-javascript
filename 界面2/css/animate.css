@@ -1,0 +1,23 @@
+.navbar.navbar-transparent .navbar-collapse.collapse.in{
+    overflow: hidden;
+    background-color: aliceblue;
+    border-radius: 5px;
+    animation: showOut 0.5s alternate;
+    -webkit-animation: showOut 0.5s alternate;
+}
+@keyframes showOut{
+    from { opacity: 0.8; height: 0}
+    to { opacity: 1; height: 118px}
+}
+.container_picture1 .col-xs-6.col-lg-3 img{
+    transition: 0.5s;
+}
+.container_picture1 .col-xs-6.col-lg-3 .text{
+    transition: 0.5s;
+}
+.container_picture1 .col-xs-6.col-lg-3:hover img{
+    transform: scale(1.2);
+}
+.container_picture1 .col-xs-6.col-lg-3:hover .text{
+    top: 0;
+}

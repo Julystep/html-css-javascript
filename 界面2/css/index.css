@@ -1,3 +1,6 @@
+body{
+    background-color: grey;
+}
 .navbar.navbar-transparent{
     position: fixed;
     width: 100%;
@@ -36,16 +39,6 @@
     color: white;
     font-size: 25px;
 }
-.navbar.navbar-transparent .navbar-collapse.collapse.in{
-    background-color: aliceblue;
-    border-radius: 5px;
-    animation: showOut 1s ;
-    -webkit-animation: showOut 1s;
-}
-@keyframes showOut{
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
 .navbar.navbar-transparent .navbar-collapse.collapse.in ul li{
     text-align: center;
     color: gray;
@@ -71,7 +64,6 @@
 .container_first{
     background-color: #20B2AA ;
     width: 100%;
-    height: 600px;
 }
 
 .container_first .container.title .lead{
@@ -93,8 +85,41 @@
 .container_first .container.footer h4{
     text-align: center;
 }
-.container_first .container.footer .row .col-xs-4.col-lg-4.col-md-4{
+.container_first .container.footer .row .col-xs-12.col-lg-4.col-md-4{
    text-align: center;
    padding: 20px;
    line-height: 20px;
 }
+
+.container_picture1{
+    margin-top: 50px;
+}
+.container_picture1 .col-xs-6.col-lg-3{
+    margin-top: 5px;
+    position: relative;
+    margin-left: 70px;
+    text-align: center;
+    overflow: hidden;
+    border: 2px solid wheat;
+    padding: 0px;
+}
+.container_picture1 .img-box img{
+    width: 100%;
+}
+.container_picture1 .text{
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 70px;
+    background-color: #fff;
+    opacity: 0.8;
+    color: black;
+}
+.container_picture1 .header h3{
+    text-align: center;
+    color: white;
+    margin-bottom: 25px;
+}
+
