@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: aquamarine;
+            margin: 10px;
+            text-align: center;
+            float: left;
+        }
+        .two{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            margin: 10px;
+            text-align: center;
+            float: left;
+        }
+        .clear_ul{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            float: left;
+        }
+        .clear_ul ul{
+            list-style-type: none;
+            cursor: pointer;
+        }
+        .clear_ul ul li:hover{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="first">
+            <h3>clear属性:针对two</h3>
+            <div class="one">one</div>
+            <div class="two">two</div>
+            <div class="clear_ul">
+                <ul>
+                    <li class="clear_li">left</li>
+                    <li class="clear_li">right</li>
+                    <li class="clear_li">both</li>
+                    <li class="clear_li">none</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script>
+    var two = document.getElementsByClassName('two')[0];
+    function setStyle(classname, stylename, mainelem){
+                var elem = document.getElementsByClassName(classname);
+                for(var i = 0; i < elem.length; i++){
+                    elem[i].onclick = function(){
+                        for(var j = 0; j < elem.length; j++){
+                            elem[j].style.backgroundColor = 'white';
+                        }
+                            this.style.backgroundColor = 'brown';
+                            mainelem.style[stylename] = this.innerHTML;
+                    }
+                }
+            }
+            setStyle('clear_li', 'clear', two);
+</script>
+</body>
+</html>
