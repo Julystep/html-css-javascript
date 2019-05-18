@@ -1,0 +1,68 @@
+<!--排队软件，先到先排队， vip可以插队， vip需按先后顺序排队-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <input id="input" name="name" />
+        <select id="mySelect">
+            <option value="yes">是vip</option>
+            <option value="no">不是vip</option>
+        </select>
+        <button type="submit" onclick="sortQuery()">排队</button>
+    </body>
+    <script>
+        var arr = [];
+        function sortQuery(){
+            var name = document.getElementById('input');
+            var mySelect = document.getElementById('mySelect');
+            
+            if(ifVip(name, mySelect) === 'no'){
+                
+                var people = {
+                    name: name.value,
+                    vip: 'no'
+                };
+                
+                arr.push(people);
+            }
+            if(ifVip(name, mySelect) === 'yes'){
+
+                var people = {
+                    name: name.value,
+                    vip: 'yes'
+                };
+                if(arr.length == 0){
+                    arr.push(people);
+                }
+
+                for(var i = 0; i < arr.length; i ++){
+                    if(arr[i].vip === 'yes'){
+                        continue;
+                    }else{
+                        arr.splice(i, 0, people);
+                        break;
+                    }
+                }
+
+            }
+
+            console.log(arr);
+        }
+
+        function ifVip(name, mySelect){
+            var vip;
+            for(var i = 0; i < mySelect.options.length; i ++){
+                if(mySelect.options[i].selected){
+                    vip = mySelect.options[i].value;
+                    return vip;
+                }
+            }
+        }
+    </script>
+</html>
