@@ -1,0 +1,53 @@
+.type_1.box_1 .text{
+    top: -100%;
+}
+.type_1.box_1 img{
+    transition: 0.5s;
+}
+.type_1.box_1 .text{
+    transition: 0.5s;
+}
+.type_1.box_1:hover img{
+    transform: scale(1.2);
+}
+.type_1.box_1:hover .text{
+    top: 0px;
+}
+.type_1.box_2 .text{
+    top: auto;
+    bottom: -100%;
+}
+.type_1.box_2 img{
+    transition: 0.5s;
+}
+.type_1.box_2 .text{
+    transition: 0.5s;
+}
+.type_1.box_2:hover img{
+    transform: scale(1.2);
+}
+.type_1.box_2:hover .text{
+    bottom: 0px;
+}
+.type_1.box_3 .text{
+    top: 50%;
+    left: 50%;
+    height: 0px;
+    width: 0px;
+}
+.type_1.box_3 img{
+    transition: 0.5s;
+}
+.type_1.box_3 .text{
+    transition: 0.5s;
+}
+.type_1.box_3:hover img{
+    transform: scale(1.2);
+}
+.type_1.box_3:hover .text{
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+}
+
