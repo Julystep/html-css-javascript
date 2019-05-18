@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        window.load = (function(){
+            var loaded = false;
+            func = new Array();
+
+            window.onload = function(){
+                load = true;
+                for(var i = 0; i < func.length; i++){
+                    func[i]();
+                }
+                console.log(i);
+            }
+            
+            return function(callback){
+                if(typeof callback != "function"){
+                    return;
+                }
+                if(loaded){
+                    callback();
+                }
+                else{
+                    func.push(callback);
+                }
+            }
+        }())
+    </script>
+</html>
