@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body{
+                padding: 0px;
+                margin: 0px;
+            }
+            div{
+                width: 300px;
+                height: 300px;
+                padding: 20px;
+                margin: 231px;
+                background: rebeccapurple;
+                border: 10px solid white;
+            }
+        </style>
+    </head>
+    <body>
+       <div></div>
+    </body>
+    <script>
+        var element = document.getElementsByTagName('div')[0];
+        var leftPos = (typeof window.screenLeft == "number")? window.screenLeft : window.screenX;
+        var topPos = (typeof window.screenTop == "number")? window.screenTop : window.screenY;
+
+        console.log(element.offsetTop);
+        console.log(element.offsetLeft);
+        console.log(element.offsetHeight);
+        console.log(element.offsetWidth);
+
+        console.log(element.clientTop);
+        console.log(element.clientLeft);
+        console.log(element.clientWidth);
+        console.log(element.clientHeight);
+
+        console.log(element.scrollTop);
+        console.log(element.scrollLeft);
+        console.log(element.scrollWidth);
+        console.log(element.scrollHeight);
+
+        /**
+        返回浏览器视口大小
+        */
+        var pageWidth = window.innerWidth;
+        pageHeight = window.innerHeight;
+        console.log(pageWidth + '  ' + pageHeight);
+
+        /**
+        返回浏览器大小
+        */
+        var pageWidth1 = window.outerWidth;
+        pageHeight1 = window.outerHeight;
+        console.log(pageWidth1 + '  ' + pageHeight1);
+
+
+        console.log(leftPos + '    ' + topPos);
+        function getPosition(element){
+            var top = document.documentElement.clientTop;
+            var left = document.documentElement.clientLeft;
+            var ele = element.getBoundingClientRect();
+            console.log(ele.top + '  ' + ele.left + '  ' + ele.bottom + '  ' + ele.right);
+        }
+        getPosition(element);
+    </script>
+</html>
