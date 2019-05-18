@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    </body>
+    <script>
+        /**
+        第一种方法
+        */
+        function randomSort(array){
+            var y = array.sort(function(a, b){
+                return Math.random() > 0.5 ? 1 : -1;
+            })
+            return y;
+        }
+        var arr = [1, 2, 3, 4, 5];
+        console.log(randomSort(arr));
+
+        function randomSort2(array){
+            n = array.length - 1;
+            while(n != -1){
+                var x = Math.floor(Math.random() * n)
+                var y = Math.floor(Math.random() * n)
+                var temp = array[x];
+                array[x] = array[y];
+                array[y] = temp;
+                n --;
+            }
+            return array
+        }
+        console.log(randomSort(arr));
+    </script>
+</html>
