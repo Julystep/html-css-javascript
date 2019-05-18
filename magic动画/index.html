@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./magic-master/dist/magic.min.css" rel="stylesheet">
+        <style>
+            .box {
+	width:200px;
+	height:300px;
+	margin:20px;
+	position: relative;
+}
+
+.box-content {
+	display:block;
+	padding:20px;
+	width: 100%;
+	height: 100%;
+	background: #333;
+	color:#ffffff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+}
+
+.box-overlay {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:10;
+}
+
+a.link {
+	display:block;
+	width: 100%;
+	height: 100%;		
+	position: absolute;
+	top:0;
+	left:0;
+	z-index:15;		
+}
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <div class="box">
+		    <div class="box-content">
+			    <div class="box-wrapper">
+				    God in Creation<span class="name">Matt Scribner</span>
+				    <div class="row">92 likes - 1,410 views</div>					
+			    </div>
+		    </div>
+		<div class="box-overlay magictime" data-hover="puffOut" data-return="puffIn">
+			<img src="./1.png" alt="" width="200px" height="300px"/>
+		</div>
+	</div>
+    <div class="box">
+		<div class="box-content">
+			<div class="box-wrapper">
+				God in Creation<span class="name">Matt Scribner</span>
+				<div class="row">92 likes - 1,410 views</div>					
+			</div>
+		</div>
+		<div class="box-overlay magictime" data-hover="swashOut" data-return="swashIn">
+			<img src="./1.png" alt="" width="200px" height="300px"/>
+		</div>
+		<a class="link" href="#" target="_blank"></a>						
+	</div>
+	<div class="box">
+		<div class="box-content">
+			<div class="box-wrapper">
+				God in Creation<span class="name">Matt Scribner</span>
+				<div class="row">92 likes - 1,410 views</div>					
+			</div>
+		</div>
+		<div class="box-overlay magictime" data-hover="slideRight" data-return="slideRightReturn">
+			<img src="./1.png" alt="" width="200px" height="300px"/>
+		</div>
+		<a class="link" href="#" target="_blank"></a>						
+	</div>
+    </div>
+    </body>
+<script src="./jquery-3.3.1.min.js"></script>   
+<script>
+    $(function () {
+	$('.box').hover(
+		function () {
+			var overlay = $(this).find('.box-overlay');
+			overlay.removeClass(overlay.data('return')).addClass(overlay.data('hover'));
+		},
+		function () {
+			var overlay = $(this).find('.box-overlay');		
+			overlay.removeClass(overlay.data('hover')).addClass(overlay.data('return'));
+
+		}
+	);
+});
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .father{
+                width: 300px;
+                height: 300px;
+                background-color: grey;
+                position: relative;
+                margin: auto;
+            }
+            .son{
+                width: 200px;
+                height: 200px;
+                background-color: green;
+                position: absolute;
+                top: 50px;
+                left: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="father">
+            如果父级元素position=relative，孩子为absolute，则孩子根据父移动而移动
+            <div class="son"></div>
+        </div>
+    </body>
+</html>
