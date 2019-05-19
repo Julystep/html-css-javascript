@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            *{margin: 0;padding: 0;}
+        .wrapper{
+            width: 500px;
+            margin: 0 auto;
+            color:#fff;
+            text-align: center;
+        }
+        #header{
+            height: 50px;
+            background-color: rgb(136, 255, 0);
+        }
+        .sidebar{
+            float: left;
+            width: 150px;
+            height: 100px;
+            background-color: #0099cc;
+        }
+        .content{
+            float: left;
+            width: 350px;
+            height: 100px;
+            background-color: #999999;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+        #footer{
+            background-color: #00ffea;
+            height: 50px;
+            clear: both;
+        }
+        </style>
+    </head>
+    <body>
+        <p>如果是content-box，则元素的长度为width+padding+border</p>
+        <p>如果是border-box，则元素的长度就是初始设置的width</p>
+        <div class="wrapper">
+            <div id="header">页眉</div>
+            <div class="sidebar">侧边栏</div>
+            <div class="content">内容内容内容内容内容内容内容内容内容内容内容</div>
+            <div id="footer">页脚</div>
+        </div>
+    </body>
+</html>
