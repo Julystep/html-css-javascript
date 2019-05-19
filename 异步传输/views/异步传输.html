@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+    </body>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('get', '/public/example.txt', true);
+        xhr.setRequestHeader('myHeader', 'muValue') //有的浏览器支持，有的浏览器不支持
+        xhr.send(null);
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState == 4){
+                console.log(xhr.status);
+        if(xhr.status == 200){
+            alert(xhr.statusText);
+            alert(xhr.responseText);
+            var myHead = xhr.getResponseHeader('content-type');
+            var AllHead = xhr.getAllResponseHeaders();
+            console.log(myHead);
+            console.log(AllHead);
+        }else if(xhr.status == 500){
+            alert(500);
+        }
+            }
+        }
+    </script>
+</html>

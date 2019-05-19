@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    </body>
+    <script>
+        /**
+        本体目的是利用strchar中的元素在前面填充str到min数据中
+        */
+        function padstare(str,min,strchar){
+            if(parseInt(str) === NaN || str.length > min){
+                console.log('数据错误');
+                return;
+            }
+            arr = str.split("");
+            while(arr.length < min){
+                arr.unshift(strchar);
+            }
+            str = arr.join('');
+            return str;
+        }
+        var x = padstare('123', 5, '0');
+        console.log(x);
+    </script>
+</html>

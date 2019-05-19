@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+    </body>
+    <script>
+        /**
+        程序的主要目的是将'-name lily -age 25 -school "chengdu university"'转化成
+        【-name lily -age 25 -school "chengdu university"】
+        */
+        function getData(str){
+            var json = {};
+            var str1 = str.split('"')[0];
+            str1 = str1.split(' ');
+            for(var i = 0; i < str1.length-1; i ++){
+                console.log(str1[i]);
+                if(i % 2 == 0){
+                    json[str1[i]] = str1[i + 1];
+                    console.log(json);
+                }
+            }
+            json[str1[str1.length-2]] = str.split('"')[1];
+            return json;
+        }
+        var str1 = '-name lily -age 25 -school "chengdu university"';
+        console.log(getData(str1));
+    </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    </body>
+    <script>
+        function indexOf(a, b){
+            if(typeof a != "string" || typeof b != "string"){
+                console.log('类型不正确');
+                return;
+            }
+            temp = b[0];
+            let j = 0;
+            for(let i = 0; i < a.length; i++){
+                if(a[i] === temp){
+                    for(j = 0, k = i; j < b.length; j++, k++){
+                        if(a[k] != b[j]){
+                            break;
+                        }
+                    }
+                    if(j === b.length){
+                        return i;
+                    }
+                }
+            }
+            return -1;
+        }
+        var x = indexOf('jashdjahsjd', 'jah');
+        console.log(x);
+    </script>
+</html>
