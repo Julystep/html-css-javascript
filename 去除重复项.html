@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+    
+    </body>
+    <script>
+        Array.prototype.uniq = function(){
+            if(length <= 1){
+                return this.slice(0);
+            }
+            var aResult = [];
+            for(var i = 0; i < this.length; i++){
+                if(!_fExit(aResult, this[i])){
+                    aResult.push(this[i]);
+                }
+            }
+            return aResult;
+           
+           
+            function _fExit(tmp, o){
+                if(tmp.length === 0){
+                    return false;
+                }
+                for(var i = 0; i < tmp.length; i++){
+                    if(tmp[i] === o){
+                        return true;
+                    }
+                    if(!o && !tmp[i] && tmp[i] !== undefined && o !== undefined && isNaN(tmp[i]) && isNaN(o)){
+                        return true;
+                    }
+                }
+                return false;
+            }
+        }
+        var x = ['a', 'b', 'v', 'a'];
+        console.log(typeof x);
+        var y = x.uniq();
+        console.log(x);
+    </script>
+</html>
