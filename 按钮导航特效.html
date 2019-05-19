@@ -5,6 +5,10 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
             html,body{
                 margin: 0px;
                 padding: 0px;
@@ -54,6 +58,8 @@
             .svg-wrapper:hover #shape{
                 stroke-dasharray: 50 0;
                 stroke-dashoffset: 0;
+                stroke-width: 3px;
+                stroke: aqua;
             }
         </style>
     </head>
@@ -64,7 +70,7 @@
                     <svg height="40" width="50px">
                         <rect id="shape" height="40" width="150"/>
                         <div id="text">
-                            <a href=""><span class="spot"></span>Button1</a>
+                            <a href="">Button1</a>
                         </div>
                     </svg>
                 </div>
