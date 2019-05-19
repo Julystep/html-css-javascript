@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+            <input id="name" name="user" class="form-control" myAttr="my-attri" value="w3cplus" data-control="text" />
+    </body>
+    <script>
+        var input = document.getElementById('name');
+        console.log(input.attributes);
+        input.value = 'qixiaowei';
+        console.log(input.value);
+        console.log(input.getAttribute('value'));
+    </script>
+</html>
