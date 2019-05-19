@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       <style>
+           h3::after{
+               content: 'java是最好的语言'
+           }
+           a::after{
+               content: attr(href);
+           }
+           q:lang(en){
+               quotes: "'" "'" '"' '"';
+           }
+           h3::before{
+               content: icon;
+           }
+           body{
+               counter-reset: section;
+           }
+           h1{
+               counter-reset: innersection;
+           }
+           h1::before{
+               counter-increment: section;
+               content: "Section" counter(section) ".";
+           }
+           h2::before{
+               counter-increment: innersection;
+               content: counter(section) "." counter(innersection)
+           }
+       </style>
+    </head>
+    <body>
+        <h3>JavaScript</h3>
+        <a>Java</a>
+        <!--quotes的应用-->
+        <p lang="en"><q>Quote me <q>Quote me</q> Quote me!</q></p>
+
+        <h1>JAVA</h1>
+        <h2>SCRIPT</h2>
+        <h2>WEB</h2>
+        <h2>INIF</h2>
+
+        <h1>C</h1>
+        <h2>++</h2>
+        <h2>#</h2>
+        <h2>--</h2>
+
+
+    </body>
+</html>
