@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            html,body{
+                margin: 0px;
+                padding: 0px;
+                width: 100%;
+                height: 100%;
+                background:-webkit-linear-gradient(top left, rgba(255, 0, 0, 0.575), rgba(255, 0, 0, 0.315));
+            }
+            #workarea{
+                width: 100%;
+                height: 100%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                margin: 0px;
+                border: 1px solid ;
+            }
+            .position{
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 25%;
+            }
+            .svg-wrapper{
+                position: relative;
+                width: 150px;
+                height: 40px;
+                display: inline-block;
+                margin-left: 50%;
+                text-align: center;
+            }
+            svg{
+                width: 100%;
+                height: 100%;
+            }
+            #shape{
+                stroke-width: 6px;
+                fill: transparent;
+                stroke: #009ffd;
+                stroke-dasharray: 85 400;
+                stroke-dashoffset: -225;
+                transition: 1s all ease;
+            }
+            #text{
+                margin-top: -26px;
+            }
+            #text a{
+                text-decoration: none;
+                color: white;
+            }
+            .svg-wrapper:hover #shape{
+                stroke-dasharray: 50 0;
+                stroke-dashoffset: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="workarea">
+            <div class="position">
+                <div class="svg-wrapper">
+                    <svg height="40" width="50px">
+                        <rect id="shape" height="40" width="150"/>
+                        <div id="text">
+                            <a href=""><span class="spot"></span>Button1</a>
+                        </div>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
