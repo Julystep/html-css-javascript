@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .box{
+                width: 400px;
+                height: 400px;
+                border: 80px solid;
+                background: -webkit-linear-gradient(Top , red, blue); 
+                background: linear-gradient(Top, red, blue);
+                border-image: -o-linear-gradient(top left, red 20%, blue 40%, green 60%, black 80%) 100 100 100 100;
+                border-image: -ms-linear-gradient(top left, red 20%, blue 40%, green 60%, black 80%) 100 100 100 100;
+                border-image: -moz-linear-gradient(top left, red 20%, blue 40%, green 60%, black 80%) 100 100 100 100;
+                border-image: -webkit-linear-gradient(top left, red 20%, blue 40%, green 60%, black 80%) 100 100 100 100;
+            }
+            .outer{
+                width: 500px;
+                height: 500px;
+                background-color: blueviolet;
+            }
+            .inner{
+                width: 100px;
+                height: 100px;
+                background-color: aqua;
+                margin-top: 10px;
+                border: 1px solid black;
+            }
+            .div1{
+                margin:10px; 
+            }
+            .div2{
+                margin:10px; 
+                border:1px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+        <div class='div1'>内容1</div>
+        <div class='div2'></div>
+        <div class='div1'>内容1</div>
+    </body>
+</html>
