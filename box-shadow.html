@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <style>
+        body{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+        }
+        .box{
+            position: relative;
+            top: 100px;
+        }
+        .cloud{
+            z-index: 1;
+            position: absolute;
+            width: 3.6875em;
+            height: 3.6875em;
+            border-radius: 50%;
+            background-color: currentColor;
+            box-shadow: 
+            -2.1875em 0.6875em 0 -0.6875em currentColor,
+            2.0625em 0.9375em 0 -0.9375em currentColor,
+            0 0 0 0.375em #fff,
+            -2.1875em 0.6875em 0 -0.3125em #fff,
+            2.0625em 0.9375em 0 -0.5625em #fff;
+        }
+        .cloud:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: -0.5em;
+            display: block;
+            width: 4.5625em;
+            height: 1em;
+            background: currentColor;
+            box-shadow: 0 0.4375em 0 -0.0625em #fff;
+        }
+        .sun{
+            position: absolute;
+            width: 2.5em;
+            height: 2.5em;
+            background-color: currentColor;
+            left: 40px;
+            top: -15px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0.375em #fff;
+            animation: spin 12s infinite linear;
+        }
+        .rays{
+            position: absolute;
+            display: block;
+            top: -35px;
+            left: 15px;
+            width: 0.375em;
+            height: 1.125em;
+            transform: rotate(50deg);
+            transform-origin: 50% 3.35em;
+            background: #fff;
+        }
+        .rays:before,
+        .rays::after {
+            content: '';
+            position: absolute;
+            top: 0em;
+            left: 0em;
+            display: block;
+            width: 0.375em;
+            height: 1.125em;
+            transform: rotate(80deg);
+            transform-origin: 50% 3.35em;
+            background: #fff;
+            border-radius: 0.25em;
+            box-shadow: 0 5.375em #fff;
+        }
+        .rays:before {
+                transform: rotate(-80deg);
+        }
+        .rain{
+            position: absolute;
+            z-index: 2;
+            top: 1.5em;
+            left: -0.1em;
+            width: 3.75em;
+            height: 3.75em;
+            background: currentColor;
+        }
+        .rain::after{
+            content: '';
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 43%;
+            width: 1.125em;
+            height: 1.125em;
+            background: #0cf;
+            border-radius: 100% 0 60% 50% / 60% 0 100% 50%;
+            transform: rotate(-28deg);
+            animation: rain 3s linear infinite;
+        }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes rain {
+            0% {
+                background: #0cf;
+                box-shadow:
+                0.625em 0.875em 0 -0.125em rgba(255,255,255,0.2),
+                -0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),
+                -1.375em -0.125em 0 #0cf;
+            }
+            25% {
+                box-shadow:
+                    0.625em 0.875em 0 -0.125em rgba(255,255,255,0.2),
+                    -0.875em 1.125em 0 -0.125em #0cf,
+                    -1.375em -0.125em 0 rgba(255,255,255,0.2);
+            }
+            50% {
+                background: rgba(255,255,255,0.3);
+                box-shadow:
+                0.625em 0.875em 0 -0.125em #0cf,
+                -0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),
+                -1.375em -0.125em 0 rgba(255,255,255,0.2);
+            }
+            100% {
+                box-shadow:
+                0.625em 0.875em 0 -0.125em rgba(255,255,255,0.2),
+                -0.875em 1.125em 0 -0.125em rgba(255,255,255,0.2),
+                -1.375em -0.125em 0 #0cf;
+            }
+        }
+    </style>
+    <body>
+        <div class="box">
+            <div class="cloud"></div>
+            <div class="sun">
+                <div class="rays"></div>
+            </div>
+            <div class="rain"></div>
+        </div>
+    </body>
+</html>
