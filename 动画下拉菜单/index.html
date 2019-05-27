@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="js/jquery-1.2.6.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <style>
+            body{
+                display: flex;
+                justify-content: center;
+                align-content: center;
+            }
+            .container{
+                position: relative;
+                width: 800px;
+                height: 800px;
+                border: 1px solid black;
+            }
+            .container img{
+                position: relative;
+                top: 100px;
+                display: none;
+            }
+            .ul{
+                position: absolute;
+                top: 140px;
+                left: 30px;
+            }
+            .ul ul{
+                padding: 0px;
+                list-style-type: none;
+            }
+            .ul ul li{
+                margin-bottom: 15px;
+                font-weight: bold;
+            }
+            .ul ul li a{
+                color: white;
+                text-decoration: none;
+            }
+            .ul ul li a:hover{
+                color: orange;
+            }
+            .menu{
+                position: absolute;
+                top: 70px;
+                left: 10px;
+                color: white;
+                text-decoration: none;
+                padding: 10px 30px;
+                background-color: rgba(255, 0, 0, 0.8);
+                border-radius: 5px;
+            }
+            .hoverd{
+                position: absolute;
+                top: 70px;
+                left: 10px;
+                text-decoration: none;
+                padding: 10px 30px;
+                background-color: greenyellow;
+                color: black;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <a href="javascript:;" class="menu" >JavaScript</a>
+            <img src="./images/bg.png" alt="" class="images" />
+            <div class="ul">
+                <ul>
+                    <li><a href="javascript:;">PHP</a></li>
+                    <li><a href="javascript:;">GO</a></li>
+                    <li><a href="javascript:;">JSON</a></li>
+                    <li><a href="javascript:;">NODE</a></li>
+                    <li><a href="javascript:;">NODE</a></li>
+                    <li><a href="javascript:;">NODE</a></li>
+                    <li><a href="javascript:;">NODE</a></li>
+                    <li><a href="javascript:;">NODE</a></li>
+                    <li><a href="javascript:;">NODE</a></li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            $(function(){
+                $('.container a').hover(
+                    function(){
+                        if($(this).hasClass('menu')){
+                            $(this).removeClass('menu').addClass('hoverd');
+                            $(this).parent().find('.images').stop().animate({
+                                'width': '247',
+                                'height': '412',
+                                'opacity': '1.0'
+                            }, 400, 'easeOutBack', function(){
+                                $(this).parent().find('div').fadeIn('fast');
+                            })
+                        }
+                    },
+                    function(){
+                        if($(this).hasClass('hoverd')){
+                            $(this).removeClass('hoverd').addClass('menu');
+                            $(this).parent().find('.images').stop().animate({
+                                'width'   : '100',
+                                'height'  : '0',
+                                'left'    : '0px',
+                                'top'     : '100px',
+                                'opacity' : '0'
+                            }, 400, 'easeOutBack', function(){
+                                $(this).parent().find('div').fadeOut('fast');
+                            })
+                        }
+                    }
+                )
+
+            })
+        </script>
+    </body>
+</html>
