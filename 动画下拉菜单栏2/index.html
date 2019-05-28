@@ -5,6 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style>
+            @font-face {
+                font-family: 'icomoon';
+                src: url('fonts/icomoon.eot');
+                src: url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),  url('fonts/icomoon.svg#icomoon') format('svg'),  url('fonts/icomoon.woff') format('woff'),  url('fonts/icomoon.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
             *{
                 padding: 0px;
                 margin: 0px;
@@ -70,30 +77,12 @@
                 position: relative;
                 color: black;
                 font-weight: bolder;
-                animation: In 1s;
             }
             .page-menu-wrapper > ul > li > ul > li a:hover{
                 color: #5bc4be;
                 text-decoration: none;
                 left: 10px;
                 animation: trans 0.5s;
-            }
-            @keyframes In{
-                0%{
-                    left: -10px;
-                }
-                25%{
-                    left: 5px;
-                }
-                50%{
-                    left: -3px;
-                }
-                75%{
-                    left: 2px;
-                }
-                100%{
-                    left: 0px;
-                }
             }
             @keyframes showIn{
                 from{ opacity: 0;};
@@ -103,6 +92,11 @@
                 from{ left: 0px;}
                 to{left: 10px;}
             }
+
+            .dropdown-menu.follow a:before{
+                left: 10px;
+            }
+
         </style>
     </head>
     <body>
@@ -125,13 +119,22 @@
                     </li>
                      <li class="menu-function-li">
                         <a href="javascript:;">PROJECT</a>
-                        <ul class="dropdown-menu language">
+                        <ul class="dropdown-menu project">
                             <li><a href="javascript:;">DEV</a></li>
                             <li><a href="javascript:;">VSCODE</a></li>
                             <li><a href="javascript:;">PYCHARM</a></li>
                             <li><a href="javascript:;">WEBSTORM</a></li>
                             <li><a href="javascript:;">VC</a></li>
                             <li><a href="javascript:;">ECPLISE</a></li>
+                        </ul>
+                    </li>
+                    <li> <a href="" title="">FOLLOW US</a>
+                        <ul class="dropdown-menu follow">
+                            <li><a href="" title="">RSS</a></li>
+                            <li><a href="" title="">Twitter</a></li>
+                            <li><a href="" title="">Facebook</a></li>
+                            <li><a href="" title="">Google+</a></li>
+                            <li><a href="" title="">Dribbble</a></li>
                         </ul>
                     </li>
                 </ul>
