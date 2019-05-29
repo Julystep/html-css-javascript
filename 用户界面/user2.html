@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>教师登录系统</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="./css/user.css" />
+    </head>
+    <body>
+        <!--开头-->
+        <div container>
+
+        </div>
+        <div class="container" id="user_table">
+            <table class="table table-hover table-bordered table-responsive table-striped table-condensed ">
+                <thead>
+                    <tr class="user_table_tr1">
+                        <td>ID</td>
+                        <td>姓名</td>
+                        <td>学院</td>
+                        <td>状态</td>
+                        <td>操作</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td style="width:200px;height:40px;" class="button_2"><button class="btn btn-info">已启用</button></td>
+                        <td>
+                            <a onclick="stop(this)"  href="javascript:;"  title="启用"><span class="glyphicon glyphicon-off" aria-hidden="true"></span></a>
+                            <a href="javascript:;" data-toggle="modal" data-target="#mymodal1" title="修改信息"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span></a>
+                            <a href="javascript:;" data-toggle="modal" data-target="#mymodal2" title="修改密码"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+                            <a onclick="member_del(this)" href="javascript:;" title="删除"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>       
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal fade" id="mymodal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">
+                            修改二级管理员信息
+                        </h4>
+                    </div>
+                    <form method="post">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text"  class="form-control" id="ID" required="true"/>
+                            <label>用户姓名</label>
+                            <input type="text"  class="form-control" id="name" required="true"/>
+                            <!--<label>性别</label>
+                            <select name="sex" id="sex" required>
+                                <option value="男">男</option>
+                                <option value="女">女</option>
+                            </select>--><br>
+                            <label>学院</label>
+                            <input type="text"  class="form-control" id="house" required/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="test()">
+                            提交更改
+                        </button>
+                    </div>
+                    </form>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+    </div>
+    <div class="modal fade" id="mymodal2" tabindex="-1"role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        &times;
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        修改密码
+                    </h4>
+                </div>
+                <form method="post">
+                    <div class="modal-body">
+                        <label>旧密码</label>
+                        <input type="password"  class="form-control" id="oldpassword" required/>
+                        <label>新密码</label>
+                        <input type="password"  class="form-control" id="newPassword1" required/>
+                        <label>确认密码</label>
+                        <input type="password"  class="form-control" id="newPassword2" required/>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                        </button>
+                        <button type="button" class="btn btn-primary"  onclick="test1()">
+                            提交更改
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+        <script src='js/jquery.js'></script> 
+        <script src="js/index.js"></script>
+        <script src="./bootstrap/js/bootstrap.js"></script>
+    </body>
+    <script>
+        function stop(obj){
+            var x=window.confirm('确定要 停用/启用 吗')
+            if(x==true){
+                if($(obj).attr('title')=='启用'){
+                    $(obj).attr('title','停用')
+
+                   $(obj).parents("tr").find(".button_2").find('button').addClass('btn disabled').html('已停用');
+
+                   }else{
+                   $(obj).attr('title','启用')
+
+                   $(obj).parents("tr").find(".button_2").find('button').removeClass(' disabled').add('btn btn-info').html('已启用');
+                   }
+                }
+            }
+        function member_del(obj){
+          var x=window.confirm('确认要删除吗？')
+              if(x==true){
+                  $(obj).parents("tr").remove();
+                  window.msg('已删除');
+              }
+      }
+      function test(){
+            if(document.getElementById("ID").value==""){
+                alert('ID不能为空');
+                return;
+            }
+            if(document.getElementById("name").value==""){
+                alert('性别不能为空');
+                return;
+            }
+            if(document.getElementById("house").value==""){
+                alert('学院不能为空');
+                return;
+            }
+            if(true){
+                alert("修改成功");
+                location.reload();
+            }
+        }
+        function test1(){
+            var x1=document.getElementById("newPassword1").value;
+            var x2=document.getElementById("newPassword2").value;
+            if(x1!=x2){
+                alert("密码输入不相同");
+                x1.value="";
+                x2.value="";
+                return;
+            }
+            else if(x1==""&&x2==""){
+                alert("密码不能为空")
+                return;
+            }
+            else if(x1===x2){
+                alert("修改成功");
+               location.reload();
+            }
+        }
+    </script>
+</html>

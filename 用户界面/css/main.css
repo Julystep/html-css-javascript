@@ -1,0 +1,23 @@
+.container{
+    top: 100px;
+    left: 250px;
+    right:50px;
+    width: 90%;
+    bottom: 20px;
+    height: 100%;
+    position: fixed;
+    background-color: blueviolet;
+}
+
+.container .embed-responsive{
+    top: 100px;
+    left: 250px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    border: none;
+}
+iframe.embed-responsive-item{
+    width: 89.3%;
+    height: 94%;
+}
