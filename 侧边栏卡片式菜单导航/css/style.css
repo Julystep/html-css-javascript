@@ -1,0 +1,37 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    position: relative;
+    top: 40px;
+}
+.container ul{
+    color: white;
+    list-style-type: none;
+}
+.container ul li{
+    position: relative;
+    left: -160px;
+    width: 200px;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bolder;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    cursor: pointer;
+    box-shadow: 8px 0px 8px -7px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+.container ul li:hover{
+    left: 0px;
+    box-shadow: 0px -8px 8px -7px rgba(0, 0, 0, 0.5),
+                0px 8px  8px -7px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+}
+.one{ background-color: #539770; }
+.two{ background-color: #4B7D74; }
+.three{ background-color: #8DC2BC; }
+.four{ background-color: #EDD6B4; }
+.five{ background-color: #BE7467; }
+.six{ background-color: #E2AE63; }
