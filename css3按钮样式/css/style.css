@@ -1,0 +1,96 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.btn-group{
+    margin: 30px;
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 30px;
+}
+.btn-group a{
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    padding: 20px 0px;
+    width: 150px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+body .container .btn-group a:nth-child(1) {
+    background-color: #541388;
+}
+body .container .btn-group a:nth-child(2) {
+    background-color: #D90368;
+}
+body .container .btn-group a:nth-child(3) {
+    background-color: #104547;
+}
+body .container .btn-group a:nth-child(4) {
+    background-color: #4F000B;
+}
+body .container .btn-group a:nth-child(5) {
+    background-color: #F28123;
+}
+.effect.effect1::before{
+    content: '\f178';
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    height: 100%;
+    width: 40px;
+}
+.effect.effect1 {
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2s linear 0s;
+}
+.effect.effect1:hover {
+  text-indent: -20px;
+}
+.effect.effect1:hover:before {
+  opacity: 1;
+  text-indent: 0px;
+}
+.effect.effect2::before{
+    content: '\f0a4';
+    font-family: FontAwesome;
+    font-size: 16px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    right: 0px;
+    top: 0px;
+    opacity: 0;
+    height: 100%;
+    width: 40px;
+}
+.effect.effect2{
+    -webkit-transition: all 0.2s linear 0s;
+    transition: all 0.2 linear 0s;
+}
+.effect.effect2:hover {
+    text-indent: -25px;
+}
+.effect.effect2:hover:before {
+  opacity: 1;
+  text-indent: 0px;
+}
