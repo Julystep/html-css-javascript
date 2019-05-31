@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            * {
+  margin: 0;
+  padding: 0; }
+ 
+.dialog-noBorder {
+  width: 300px;
+  height: 150px;
+  background: orchid;
+  margin: 0 auto;
+  -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+          border-radius: 20px;
+  position: relative;
+  border: 10px solid orchid;
+  /*此处的边框大小会影响第二个三角形到顶部的偏移量，一般是1.4倍*/ }
+ 
+.dialog-noBorder::before {
+  content: '';
+  position: absolute;
+  top: 150px;
+  left: 120px;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 30px solid orchid; }
+        </style>
+    </head>
+    <body>
+        <div class="dialog-noBorder">实心三角形（视觉上没有边框）</div>
+    </body>
+</html>
