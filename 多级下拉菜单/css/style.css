@@ -1,0 +1,129 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-image: url(../back.jpg)
+}
+a{
+    color: #666;
+    font-size: 18px;
+    font-weight: thin;
+    text-decoration: none;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 100%;
+    top: 50px;
+}
+ul{
+    list-style-type: none;
+}
+.nav{
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    width: 80%;
+    box-shadow: 0 1px 3px #dedede;
+}
+.active{
+    background: #8ECB8D;
+}
+.active > a{
+    color: white;
+}
+.nav > li{
+    cursor: pointer;
+    float: left;
+    width: 145.688px;
+    height: 58px;
+    transition: 0.5s ease-in-out;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 17px;
+}
+.nav > li > i{
+    color: #dedede;
+    padding-right: 6px;
+    font-size: 18px;
+}
+.nav > li:hover{
+    background-color: #8ECB8D;
+}
+.nav > li:hover a{
+    color: white;
+}
+
+.nav > .WEB:hover .inner.item1{
+    display: block;
+}
+.inner.item1{
+    position: relative;
+    top: 25px;
+    background-color: #8ECB8D;
+    color: white;
+    width: 145px;
+    text-align: center;
+    display: none;
+    animation: item 0.5s;
+}
+.inner.item1:before{
+    position: absolute;
+    content: '';
+    top: -20px;
+    left: 0px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #8ECB8D transparent;
+}
+.inner.item1 li{
+    padding: 14px 0px;
+}
+.inner.item1 li:hover{
+    background-color: rgb(88, 160, 86);
+}
+.inner.item1 li a{
+    font-size: 10px;
+}
+@keyframes item{
+    from{ opacity: 0; width: 0px;}
+    to{ opacity: 1; width: 145px }
+}
+@keyframes item1{
+    from{ opacity: 0; height: 0px;}
+    to{ opacity: 1; height: 180px;}
+}
+.inner.item1-1::before{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: -20px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent #8ECB8D transparent transparent;
+}
+.inner.item1-1{
+    position: absolute;
+    top: 98px;
+    left: 155px;
+    background-color: #8ECB8D;
+    width: 123px;
+    font-size: 10px;
+    display: none;
+    animation: item1 0.5s;
+}
+.inner.item1-1 li:hover{
+    background-color: rgb(88, 160, 86);
+}
+#SHARE:hover .inner.item1-1{
+    display: block;
+}
+
+

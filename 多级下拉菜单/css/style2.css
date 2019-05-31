@@ -1,0 +1,76 @@
+.nav.little{
+    display: none;
+    animation: nav 0.5s ;
+}
+@keyframes nav{
+    from{ top: -300px}
+    to{ top: 0px;}
+}
+
+.nav.little li{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+.menu.little{
+    position: absolute;
+    text-align: left;
+    top: -40px;
+    width: 400px;
+    color: white;
+    background-color: #8ECB8D;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.menu.little i{
+    float: right;
+}
+.menu.little i:hover{
+    cursor: pointer;
+}
+.inner.item1.little{
+    position: relative;
+    color: #dedede;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 0px;
+    left: -10px;
+    width: 400px;
+    animation: item 0.5s;
+}
+@keyframes item{
+    from{ opacity: 0; height: 0; width: 400px}
+    to{ opacity: 1; height: 160px; width: 400px;}
+}
+.inner.item1.little::before{
+    content: '';
+    border: none;
+}
+.inner.item1.little li{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.inner.item1.little li a{
+    color: rgba(0, 0, 0, 0.8);
+}
+.inner.item1-1.little{
+    top: 120px;
+    left: 0px;
+}
+.inner.item1-1.little::before{
+    content: '';
+    border: none;
+}
+.inner.item1-1.little li{
+    color: rgba(0, 0, 0, 0.8);
+    width: 400px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+}
+.inner.item1-1.little li:hover{
+    background-color: rgb(88, 160, 86);
+}
