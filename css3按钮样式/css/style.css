@@ -94,3 +94,67 @@ body .container .btn-group a:nth-child(5) {
   opacity: 1;
   text-indent: 0px;
 }
+.effect.effect3::before{
+    content: '\f178';
+    font-family: FontAwesome;
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    top: 100%;
+    transition: all 0.2s linear 0s;
+}
+.effect.effect3:hover{
+    text-indent: -1000px;
+}
+.effect.effect3:hover::before{
+    top: 25%;
+    text-indent: 0px;
+}
+.effect.effect4::before{
+    content: '\f178';
+    font-family: FontAwesome;
+    font-size: 30px;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    transition: all 0.2s linear 0s;
+    transform: scale(0, 1);
+}
+.effect.effect4:hover{
+    text-indent: -1000px;
+}
+.effect.effect4:hover::before{
+    transform: scale(1, 1);
+    text-indent: 0px;
+}
+.effect.effect5::before{
+    content: '\f054';
+    font-family: FontAwesome;
+    font-size: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    width: 30px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0 50% 50% 0;
+    transition: all 0.2s linear 0s;
+    transform: scale(0, 1);
+    transform-origin: left center;
+}
+.effect.effect5:hover{
+    text-indent: 20px;
+}
+.effect.effect5:hover::before{
+    transform: scale(1, 1);
+    text-indent: 0px;
+}
