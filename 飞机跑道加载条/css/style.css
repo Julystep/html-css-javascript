@@ -1,0 +1,59 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    background-color: rgba(128, 128, 128, 0.5);
+}
+.air-plane-way{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.one{
+    position: relative;
+    top: 30px;
+    display: inline-flex;
+    justify-content: start;
+    width: 65%;
+    background-color: grey;
+    height: 35px;
+    box-sizing: border-box;
+    padding: 4.5px 20px;
+    border-radius: 15px;
+}
+.one::before{
+    content: '-----------------------------------------------';
+    position: absolute;
+    left: 40px;
+    font-weight: 700;
+    font-size: 40px;
+    top: -13px;
+    font-stretch: narrower;
+    color: white;
+    letter-spacing: 4px;
+}
+.inner{
+    position: relative;
+    width: 95%;
+    border-radius: 13px;
+    left: 20px;;
+    box-sizing: border-box;
+    background-color: rgb(33, 38, 185);
+    animation: inner 3s;
+}
+.fa{
+    position: absolute;
+    left: 780px;
+    font-size: 70px;
+    background-color: transparent;
+    top: -24px;
+    animation: fa 3s;
+}
+@keyframes inner{
+    from{ width: 5%; }
+    to{ width: 95%; }
+}
+@keyframes fa{
+    from{ left: 10px; }
+    to{ left: 780px; }
+}
