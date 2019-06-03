@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                <h3>The title of this</h3>
+            </div>
+            <div class="right">
+                <p class="effect1">淡入淡出</p>
+                <p class="effect2">划入划出</p>
+            </div>
+        </div>
+        <div id="effect1" class="effect">
+            <div class="head">
+                <h2>Some</h2>
+            </div>
+            <div class="body">
+                <p>it is me</p>
+            </div>
+            <div class="foot">
+                <p>close</p>
+            </div>
+        </div>
+        <div id="effect2" class="effect">
+            <div class="head">
+                <h2>Some</h2>
+            </div>
+            <div class="body">
+                <p>it is me</p>
+            </div>
+            <div class="foot">
+                <p>close</p>
+            </div>
+        </div>
+        <script src="./js/jquery-3.3.1.min.js"></script>
+        <script>
+            $(function(){
+                $('.effect1').click(function(){
+                    $('body').css('backgroundColor','rgb(68, 6, 6)')
+                    $('#effect1').fadeIn(1000);
+
+                })
+                $('#effect1 .foot').click(function(){
+                    $('#effect1').fadeOut(1000);
+                    $('body').css('backgroundColor','rgb(155, 26, 26)')
+                })
+
+                $('.effect2').click(function(){
+                    $('body').css('backgroundColor','rgb(68, 6, 6)')
+                    $('#effect2').slideDown(1000);
+
+                })
+                $('#effect2 .foot').click(function(){
+                    $('body').css('backgroundColor','rgb(155, 26, 26)')
+                    $('#effect2').slideUp(1000);
+                })
+            })
+        </script>
+    </body>
+</html>
